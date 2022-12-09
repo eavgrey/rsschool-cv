@@ -1,1 +1,1 @@
-https://eavgrey.github.io/rsschool-cv-html
+https://eavgrey.github.io/rsschool-cv/
