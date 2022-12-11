@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5d2ab4825d.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -42,71 +52,90 @@
       <h1 class="name">Christine Semenyuk</h1>
     </header>
     <main class="main-box">
-      <div class="contacts" id="contacts">
+      <div class="about-me" id="about-me">
+        <h2 class="main-header">ABOUT ME</h2>
+        <p class="info">
+          <i>
+            I am a self taught student, ambitious and hardworking individual,
+            with skills in front end development. I am passionate about this
+            work, I love what I do, I have a steady source of motivation that
+            drives me to do my best.</i
+          >
+        </p>
+      </div>
+      <div class="contacts bottom-border" id="contacts">
         <h2 class="main-header">CONTACTS</h2>
         <ul class="contacts-list">
           <li class="contact">
-            <a href="tel:+375 25 769 84 25">375 25 769 84 25</a>
+            <a class="contact-link" href="tel:+375 25 769 84 25"
+              ><i class="fa-solid fa-phone"></i> 375 25 769 84 25</a
+            >
           </li>
           <li class="contact">
-            <a href="mailto:eavgrey@gmail.com">eavgrey@gmail.com</a>
+            <a class="contact-link" href="mailto:eavgrey@gmail.com"
+              ><i class="fa-solid fa-envelope"></i> eavgrey@gmail.com</a
+            >
           </li>
           <li class="contact">
-            <a href="https://github.com/eavgrey">Github</a>
+            <a class="contact-link" href="https://github.com/eavgrey"
+              ><i class="fa-brands fa-github"></i> Github</a
+            >
           </li>
           <li class="contact">
-            <a href="https://www.linkedin.com/in/christine-semenyuk-905706220/"
-              >Linkedin</a
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/christine-semenyuk-905706220/"
+              ><i class="fa-brands fa-linkedin"></i> Linkedin</a
             >
           </li>
         </ul>
       </div>
-      <div class="about-me" id="about-me">
-        <h2 class="main-header">ABOUT ME</h2>
-        <p class="info">
-          I am a self taught student, ambitious and hardworking individual, with
-          skills in front end development. I am passionate about this work, I
-          love what I do, I have a steady source of motivation that drives me to
-          do my best.
-        </p>
-      </div>
-      <div class="education" id="education">
+
+      <div class="education bottom-border" id="education">
         <h2 class="main-header">EDUCATION</h2>
-        <p class="info">
-          Belarusian State Economic University 2019 - 2023 гг. | Faculty of Law
-        </p>
-        <p class="info">English level - B2</p>
+        <div class="education-box">
+          <i class="fa-solid fa-2x fa-building-columns"></i>
+          <p class="info">
+            Belarusian State Economic University 2019 - 2023 гг. | Faculty of
+            Law
+          </p>
+        </div>
+        <div class="english-level-box">
+          <i class="fa-solid fa-2x fa-language"></i>
+          <p class="info">English level - <strong>B2</strong></p>
+        </div>
       </div>
-      <div class="certifications" id="certifications">
+      <div class="certifications bottom-border" id="certifications">
         <h2 class="main-header">CERTIFICATIONS</h2>
         <ul class="certification-list">
-          <li class="certification">Responsive Web Design at freeCodeCam</li>
-          <li class="certification">Learn CSS Course at Codecademy</li>
-          <li class="certification">Learn JavaScript Course at Codecademy</li>
-          <li class="certification">
+          <li class="certification"><i class="fa-solid fa-certificate"></i> Responsive Web Design at freeCodeCam</li>
+          <li class="certification"><i class="fa-solid fa-certificate"></i> Learn CSS Course at Codecademy</li>
+          <li class="certification"><i class="fa-solid fa-certificate"></i> Learn JavaScript Course at Codecademy</li>
+          <li class="certification"><i class="fa-solid fa-certificate"></i>
             Build a Website with HTML, CSS, and Github Pages Skill Path at
             Codecademy
           </li>
-          <li class="certification">
+          <li class="certification"><i class="fa-solid fa-certificate"></i>
             Building Interactive JavaScript Websites Course at Codecademy
           </li>
         </ul>
       </div>
-      <div class="skills" id="skills">
+      <div class="skills bottom-border" id="skills">
         <h2 class="main-header">SKILLS</h2>
         <ul class="skills-list">
-          <li class="skill">CSS</li>
-          <li class="skill">HTML</li>
-          <li class="skill">JavaScript</li>
-          <li class="skill">Responsive Web Design</li>
-          <li class="skill">UI/UX</li>
-          <li class="skill">React</li>
+          <li class="skill"><i class="fa-brands fa-css3-alt"></i> CSS</li>
+          <li class="skill"><i class="fa-brands fa-html5"></i> HTML</li>
+          <li class="skill"><i class="fa-brands fa-js"></i> JavaScript</li>
+          <li class="skill"><i class="fa-solid fa-desktop"></i> Responsive Web Design</li>
+          <li class="skill"><i class="fa-solid fa-pen-nib"></i> UI/UX</li>
+          <li class="skill"><i class="fa-brands fa-react"></i> React</li>
         </ul>
       </div>
-      <div class="code-examples" id="code-examples">
-        <h2 class="main-header">CODE EXAMPLE</h2>
-        <code class="example">
-          <pre>
+      <div class="example-box bottom-border">
+        <div class="code-examples" id="code-examples">
+          <h2 class="main-header">CODE EXAMPLE</h2>
+          <pre><code class="example">
+      
 //tic-tac-toe code
 "use strict";
 
@@ -121,8 +150,8 @@ const restart = document.getElementById("reset");
 const playerOneScore = document.getElementById("player-one-score");
 const playerTwoScore = document.getElementById("player-two-score");
 
-const iconX = '<i class="icon fa-solid fa-5x fa-xmark"></i>';
-const iconO = '<i class="icon fa-regular fa-4x fa-circle"></i>';
+const iconX = 'X';
+const iconO = 'O';
 
 let currentSign = 'cross'
 let counterOne = 0;
@@ -310,8 +339,9 @@ cells.forEach((cell, index) => {
     computerTurn()
   });
 });
-</pre>
-        </code>
+
+        </code></pre>
+        </div>
       </div>
       <div class="projects" id="projects">
         <h2 class="main-header">MY PROJECTS</h2>
@@ -327,14 +357,16 @@ cells.forEach((cell, index) => {
     </main>
     <footer class="footer-box">
       <p class="author">
-        Made by <a href="https://github.com/eavgrey">Eavgrey</a>
+        Made by
+        <a class="author-link" href="https://github.com/eavgrey">Eavgrey</a>
       </p>
-
-      <a href="https://rs.school/js/">
-        <img src="/rsschool-cv/rs_school_js.svg" alt="rssschool logo"
-      /></a>
-
       <p class="year-of-creation">2022</p>
+      <a href="https://rs.school/js/">
+        <img
+          class="logo"
+          src="/rsschool-cv/rs_school_js.svg"
+          alt="rssschool logo"
+      /></a>
     </footer>
   </body>
 </html>
