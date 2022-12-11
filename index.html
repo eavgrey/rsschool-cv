@@ -1,10 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <img
+        src="/rsschool-cv/photo_2022-12-08_13-41-35.jpg"
+        alt="avatar"
+        class="profil-pic"
+      />
+      <h1 class="name">Christine Semenyuk</h1>
+      <nav class="nav-bar">
+        <ul class="nav-bar-list">
+          <li class="nav-bar-item"></li>
+          <li class="nav-bar-item"></li>
+          <li class="nav-bar-item"></li>
+          <li class="nav-bar-item"></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-box">
+      <div class="contacts">
+        <h2 class="main-header">CONTACTS</h2>
+        <ul class="contacts-list">
+          <li class="contact">
+            <a href="tel:+375 25 769 84 25">375 25 769 84 25</a>
+          </li>
+          <li class="contact">
+            <a href="mailto:eavgrey@gmail.com">eavgrey@gmail.com</a>
+          </li>
+          <li class="contact">
+            <a href="https://github.com/eavgrey">Github</a>
+          </li>
+          <li class="contact">
+            <a href="https://www.linkedin.com/in/christine-semenyuk-905706220/"
+              >Linkedin</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="about-me">
+        <h2 class="main-header">ABOUT ME</h2>
+        <p class="info">
+          I am a self taught student, ambitious and hardworking individual, with
+          skills in front end development. I am passionate about this work, I
+          love what I do, I have a steady source of motivation that drives me to
+          do my best.
+        </p>
+      </div>
+      <div class="education">
+        <h2 class="main-header">EDUCATION</h2>
+        <p class="info">
+          Belarusian State Economic University 2019 - 2023 гг. | Faculty of Law
+        </p>
+        <p class="info">English level - B2</p>
+      </div>
+      <div class="certifications">
+        <h2 class="main-header">CERTIFICATIONS</h2>
+        <ul class="certification-list">
+          <li class="certification">Responsive Web Design at freeCodeCam</li>
+          <li class="certification">Learn CSS Course at Codecademy</li>
+          <li class="certification">Learn JavaScript Course at Codecademy</li>
+          <li class="certification">
+            Build a Website with HTML, CSS, and Github Pages Skill Path at
+            Codecademy
+          </li>
+          <li class="certification">
+            Building Interactive JavaScript Websites Course at Codecademy
+          </li>
+        </ul>
+      </div>
+      <div class="skills">
+        <h2 class="main-header">SKILLS</h2>
+        <ul class="skills-list">
+          <li class="skill">CSS</li>
+          <li class="skill">HTML</li>
+          <li class="skill">JavaScript</li>
+          <li class="skill">Responsive Web Design</li>
+          <li class="skill">UI/UX</li>
+          <li class="skill">React</li>
+        </ul>
+      </div>
+      <div class="code-examples">
+        <h2 class="main-header">CODE EXAMPLE</h2>
+        <code class="example">
+          <pre>
+//tic-tac-toe code
+"use strict";
+
+const cells = document.querySelectorAll(".cell");
+const playerOne = document.getElementById("player-one");
+const playerTwo = document.getElementById("player-two");
+const result = document.getElementById("result");
+
+const again = document.getElementById("again");
+const restart = document.getElementById("reset");
+
+const playerOneScore = document.getElementById("player-one-score");
+const playerTwoScore = document.getElementById("player-two-score");
+
+const iconX = '<i class="icon fa-solid fa-5x fa-xmark"></i>';
+const iconO = '<i class="icon fa-regular fa-4x fa-circle"></i>';
+
+let currentSign = 'cross'
+let counterOne = 0;
+let counterTwo = 0;
+let isWin = false;
+
+const board = [
+  null, null, null, 
+  null, null, null, 
+  null, null, null
+]
+
+function updateBoard() {
+  cells.forEach((cell, index) => {
+    switch (board[index]) {
+      case 'cross':
+        cell.innerHTML = iconX
+        break;
+      case 'circle':
+        cell.innerHTML = iconO
+        break;
+      default:
+        cell.innerHTML = ''
+        break;
+    }
+  })
+}
+
+function putSign(sign, index) {
+  if (sign !== currentSign) {
+    return;
+  }
+  if (board[index]) {
+    return;
+  }
+  if (isWin) {
+    return;
+  } 
+  
+  board[index] = sign
+  if (sign === "cross") {
+    currentSign = 'circle'
+    playerOne.classList.remove("active");
+    playerTwo.classList.add("active");
+  } else if (sign === "circle") {
+    currentSign = 'cross'
+    playerOne.classList.add("active");
+    playerTwo.classList.remove("active");
+  }
+
+  getWinner();
+
+  updateBoard()
+}
+
+function playAgain() {
+  board.fill(null);
+  updateBoard();
+
+  isWin = false;
+  result.innerHTML = "";
+  playerOneScore.innerHTML = counterOne;
+  playerTwoScore.innerHTML = counterTwo;
+
+  if (currentSign === 'circle') {
+    computerTurn()
+  }
+}
+
+function reset() {
+  counterOne = 0;
+  counterTwo = 0;
+  playerOneScore.innerHTML = 0;
+  playerTwoScore.innerHTML = 0;
+}
+
+again.addEventListener("click", playAgain);
+restart.addEventListener("click", reset);
+
+function checkSign(sign, board) {
+    return (
+      (board[0] === sign && board[0] === board[1] && board[1] === board[2]) ||
+      (board[3] === sign && board[3] === board[4] && board[4] === board[5]) ||
+      (board[6] === sign && board[6] === board[7] && board[7] === board[8]) ||
+      (board[0] === sign && board[0] === board[3] && board[3] === board[6]) ||
+      (board[1] === sign && board[1] === board[4] && board[4] === board[7]) ||
+      (board[2] === sign && board[2] === board[5] && board[5] === board[8]) ||
+      (board[0] === sign && board[0] === board[4] && board[4] === board[8]) ||
+      (board[2] === sign && board[2] === board[4] && board[4] === board[6]) 
+    )
+}
+
+function getWinner() {
+  if (checkSign('cross', board)) {
+    isWin = true;
+    result.innerHTML = 'Player 1 WIN';
+    counterOne++;
+  } else if (checkSign('circle', board)) {
+    isWin = true;
+    result.innerHTML = 'Player 2 WIN';
+    counterTwo++;
+  } else if (board.every(x => x !== null)) {
+    result.innerHTML = 'Tie';
+  }
+}
+
+function getScore(sign, board ) {
+  if (checkSign('cross', board)) {
+        if (sign === 'cross') {
+      return 10
+    }
+    return -10
+  }
+
+  if (checkSign('circle', board)) {
+    if (sign === 'circle') {
+      return 10
+    }
+    return -10
+  }
+  return 0
+}
+
+let bestIndex
+function miniMax(sign, board){
+  let score = getScore('circle', board)
+ if((score === 10 ) || (score === -10)){
+  return score
+ } else {
+  const newBoards = []
+  const freeIndexes = [];
+  board.forEach((x, i) => {
+    if (x === null) {
+      freeIndexes.push(i);
+    }
+  })
+  if (freeIndexes.length === 0){
+    return 0
+  }
+   
+  freeIndexes.forEach((index)=>{
+    let newBoard = [].concat(board)
+    newBoard[index] = sign
+    newBoards.push(newBoard)
+  })
+  const scores = []
+  newBoards.forEach((newBoard)=>{
+   let miniMaxScore = miniMax(sign==='circle'?'cross':'circle', newBoard)
+   scores.push(miniMaxScore)
+  })
+
+  if (sign === 'circle'){
+    let i = scores.indexOf(Math.max(...scores))
+    bestIndex = freeIndexes[i]
+    return scores[i]
+  } else {
+    let i = scores.indexOf(Math.min(...scores))
+    bestIndex = freeIndexes[i]
+    return scores[i]
+  }
+ }
+}
+
+function computerTurn () {
+    const computerIndexes = [];
+    board.forEach((x, i) => {
+      if (x === null) {
+        computerIndexes.push(i);
+      }
+    })
+    const computerIndex = computerIndexes[Math.floor(Math.random() * computerIndexes.length)]
+
+    // setTimeout(() => {
+    // }, 1000);
+    // console.log(miniMax('circle', board))
+    miniMax('circle', board)
+    console.log(bestIndex)
+    putSign('circle', bestIndex)
+}
+
+cells.forEach((cell, index) => {
+  cell.addEventListener("click", () => {
+    putSign('cross', index)
+
+    computerTurn()
+  });
+});
+</pre>
+        </code>
+      </div>
+      <div class="projects">
+        <h2 class="main-header">MY PROJECTS</h2>
+        <ul class="projects-list">
+          <li class="project"><a href="https://eavgrey.github.io/Tic-tac-toe/">Tic Tac Toe</a></li>
+          <li class="project"><a href="https://eavgrey.github.io/Spotify/">Spotify</a></li>
+        </ul>
+      </div>
+    </main>
+    <footer class="footer-box">
+      <p class="author">
+        Made by <a href="https://github.com/eavgrey">Eavgrey</a>
+      </p>
+
+      <a href="https://rs.school/js/">
+        <img src="/rsschool-cv/rs_school_js.svg" alt="rssschool logo"
+      /></a>
+
+      <p class="year-of-creation">2022</p>
+    </footer>
+  </body>
 </html>
