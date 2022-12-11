@@ -1,4 +1,33 @@
 body {
   margin: 0;
   padding: 0;
+  width: 1000px;
+  margin: 0 auto;
+}
+.profil-pic {
+  width: 200px;
+}
+.nav-bar {
+  background-color: rgb(44, 53, 139);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-bar-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 50px;
+}
+.nav-bar-item {
+  list-style: none;
+}
+.nav-bar-item:hover {
+  border-bottom: 1px solid gold;
+}
+.nav-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
 }
