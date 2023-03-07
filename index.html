@@ -176,7 +176,7 @@ const board = [
 ]
 
 function updateBoard() {
-  cells.forEach((cell, index) => {
+  cells.forEach((cell, index) =&gt; {
     switch (board[index]) {
       case 'cross':
         cell.innerHTML = iconX
@@ -264,7 +264,7 @@ function getWinner() {
     isWin = true;
     result.innerHTML = 'Player 2 WIN';
     counterTwo++;
-  } else if (board.every(x => x !== null)) {
+  } else if (board.every(x =&gt; x !== null)) {
     result.innerHTML = 'Tie';
   }
 }
@@ -294,7 +294,7 @@ function miniMax(sign, board){
  } else {
   const newBoards = []
   const freeIndexes = [];
-  board.forEach((x, i) => {
+  board.forEach((x, i) =&gt; {
     if (x === null) {
       freeIndexes.push(i);
     }
@@ -303,13 +303,13 @@ function miniMax(sign, board){
     return 0
   }
    
-  freeIndexes.forEach((index)=>{
+  freeIndexes.forEach((index)=&gt;{
     let newBoard = [].concat(board)
     newBoard[index] = sign
     newBoards.push(newBoard)
   })
   const scores = []
-  newBoards.forEach((newBoard)=>{
+  newBoards.forEach((newBoard)=&gt;{
    let miniMaxScore = miniMax(sign==='circle'?'cross':'circle', newBoard)
    scores.push(miniMaxScore)
   })
@@ -328,14 +328,14 @@ function miniMax(sign, board){
 
 function computerTurn () {
     const computerIndexes = [];
-    board.forEach((x, i) => {
+    board.forEach((x, i) =&gt; {
       if (x === null) {
         computerIndexes.push(i);
       }
     })
     const computerIndex = computerIndexes[Math.floor(Math.random() * computerIndexes.length)]
 
-    // setTimeout(() => {
+    // setTimeout(() =&gt; {
     // }, 1000);
     // console.log(miniMax('circle', board))
     miniMax('circle', board)
@@ -343,8 +343,8 @@ function computerTurn () {
     putSign('circle', bestIndex)
 }
 
-cells.forEach((cell, index) => {
-  cell.addEventListener("click", () => {
+cells.forEach((cell, index) =&gt; {
+  cell.addEventListener("click", () =&gt; {
     putSign('cross', index)
 
     computerTurn()
