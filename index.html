@@ -146,7 +146,6 @@
         <div class="code-examples" id="code-examples">
           <h2 class="main-header">CODE EXAMPLE</h2>
           <pre><code class="example">
-      
 //tic-tac-toe code
 "use strict";
 
@@ -170,8 +169,8 @@ let counterTwo = 0;
 let isWin = false;
 
 const board = [
-  null, null, null, 
-  null, null, null, 
+  null, null, null,
+  null, null, null,
   null, null, null
 ]
 
@@ -200,8 +199,8 @@ function putSign(sign, index) {
   }
   if (isWin) {
     return;
-  } 
-  
+  }
+
   board[index] = sign
   if (sign === "cross") {
     currentSign = 'circle'
@@ -302,7 +301,7 @@ function miniMax(sign, board){
   if (freeIndexes.length === 0){
     return 0
   }
-   
+
   freeIndexes.forEach((index)=&gt;{
     let newBoard = [].concat(board)
     newBoard[index] = sign
